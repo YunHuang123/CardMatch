@@ -14,7 +14,7 @@ public class Main {
         frame.setResizable(false); //prevent frame from resize with mouse
         frame.setVisible(true); //makes the frame visible
         JLabel label = new JLabel("I code"); //creates a label and set text, could also use the setText method
-        frame.add(label);
+        frame.add(label); //
         ImageIcon image1 = new ImageIcon("img.png");
         label.setIcon(image1);
         label.setHorizontalTextPosition(JLabel.CENTER);
