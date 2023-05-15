@@ -50,7 +50,7 @@ public class HomePage extends JFrame implements ActionListener {
         backgroundPanel.add(label); //add label to backgroundPanel which covers the whole frame
         this.add(backgroundPanel); //add backgroundPanel to the frame
         this.add(playButton); //adds the play button to the frame
-        this.add(buttonPanel);
+        this.add(buttonPanel); //add panel
 
 
         this.setVisible(true); //makes the frame visible
