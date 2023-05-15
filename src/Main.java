@@ -25,8 +25,9 @@ public class Main {
         ImageIcon image = new ImageIcon("Image1.jfif"); //creates an image icon
         frame.setIconImage(image.getImage()); //change icon of frame*/
 
-        MyFrame frame = new MyFrame();
-        //frame.getContentPane().add(new JPanelWithBackground("Pictures/galaxy.png"));
+        HomePage frame = new HomePage();
+
+        //Frame frame = new Frame();
 
 
 
