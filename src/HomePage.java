@@ -4,41 +4,35 @@ import javax.swing.ImageIcon;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
-
 
 public class HomePage extends JFrame implements ActionListener {
+    private JPanel panelBackGround;
+    private JButton playButton;
+    private JButton instructionButton;
+    private JLabel label1;
 
     HomePage(){
-
+        ImageIcon image = new ImageIcon("Pictures/Galaxy.png");
         ImageIcon icon = new ImageIcon("Pictures/Icon.png"); //creates an image icon
-        this.setIconImage(icon.getImage()); //change icon of frame
 
-        JLabel label = new JLabel(); //create a label
+        setContentPane(panelBackGround);
+        this.setSize(975, 690); //sets the x and y dimensions of the frame
+        this.setTitle("A Test of Memory!"); //sets the title of the frame
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        playButton.setSize(100, 40);
+        instructionButton.setSize(100, 40);
 
-        JPanel buttonPanel = new JPanel();
-        //buttonPanel.setBackground(Color.RED);
-        //buttonPanel.setBounds(200, 100, 100, 200);
+/*
 
-        JPanel backgroundPanel = new JPanel();
-        backgroundPanel.setBounds(0, 0, 975, 657);
 
         //manipulates the label
-        label.setText("Welcome to CardMatching Game!"); //set text of label
-        label.setHorizontalTextPosition(JLabel.CENTER); //set horizontal position of text: RIGHT, CENTER, LEFT
-        label.setVerticalTextPosition(JLabel.TOP); //set vertical position of text: TOP, CENTER, BOTTOM
-        label.setForeground(Color.WHITE); //set color of text
-        label.setFont(new Font("MV Boli", Font.PLAIN, 30)); //set font and size of text
-        label.setIconTextGap(-200); //sets the gap between image and text
-
-        ImageIcon image = new ImageIcon("Pictures/galaxy.png"); //creates image of galaxy
-        label.setIcon(image); //show image of galaxy
-
-        JButton playButton = new JButton(); //creates the play button
-        playButton.setBounds(420, 300, 100, 50);
-
-
+        label1.setText("Welcome to CardMatching Game!"); //set text of label
+        label1.setHorizontalTextPosition(JLabel.CENTER); //set horizontal position of text: RIGHT, CENTER, LEFT
+        label1.setVerticalTextPosition(JLabel.TOP); //set vertical position of text: TOP, CENTER, BOTTOM
+        label1.setForeground(Color.WHITE); //set color of text
+        label1.setFont(new Font("MV Boli", Font.PLAIN, 30)); //set font and size of text
+        label1.setIconTextGap(-200); //sets the gap between image and text
 
         this.setTitle("A Test of Memory!"); //sets the title of the frame
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //exits the frame when close
@@ -46,14 +40,17 @@ public class HomePage extends JFrame implements ActionListener {
         this.setLocation(450, 150); //set location of frame
         this.setResizable(false); //prevent frame from resize with mouse
 
+        panelBackGround.add(label1);
+        this.add(panelBackGround);
+        this.add(playButton);*/
 
-        backgroundPanel.add(label); //add label to backgroundPanel which covers the whole frame
-        this.add(backgroundPanel); //add backgroundPanel to the frame
-        this.add(playButton); //adds the play button to the frame
-        this.add(buttonPanel); //add panel
+        //label2.setText("Welcome to CardMatching Game!"); //set text of label
+        label1.setIcon(image); //show image of galaxy
+        this.setIconImage(icon.getImage()); //change icon of frame
 
+        this.setResizable(false);
+        this.setVisible(true);
 
-        this.setVisible(true); //makes the frame visible
 
     }
 

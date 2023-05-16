@@ -7,8 +7,9 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        HomePage frame = new HomePage();
+        //HomeFrame frame = new HomeFrame();
 
+        new HomePage();
 
 
 
