@@ -9,8 +9,8 @@ public class Main {
 
         //HomeFrame frame = new HomeFrame();
 
-        new HomePage();
-
+        //new HomePage();
+        new Level1();
 
 
 
