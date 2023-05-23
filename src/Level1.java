@@ -1,46 +1,59 @@
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.text.AbstractDocument;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
 public class Level1 extends JFrame{
-    static JLayeredPane EverythingButPlayer;
-    private JFrame j;
-    private JPanel panel1;
-    private Image sun;
-    private ImageIcon moon;
+    private ImageIcon cardBack;
 
-    private int x1;
-    private int y1;
+    private ImageIcon sun;
+    private ImageIcon moon;
+    private ImageIcon comets;
+    private ImageIcon asteroids;
+    private ImageIcon meteorite;
+    private ImageIcon telescope;
+    private JPanel panel1;
+    private JPanel panel;
+    private JPanel panel2;
+    private JPanel panel3;
+    private JPanel panel4;
+    private JPanel panel5;
+    private JPanel panel6;
+    private JPanel panel7;
+    private JPanel panel8;
+    private JPanel panel9;
+    private JPanel panel10;
+    private JPanel panel11;
+    private JPanel panel12;
+    private JLabel label;
+    private JLabel label2;
+    private JLabel label3;
+    private JLabel label4;
+    private JLabel label5;
+    private JLabel label6;
+    private JLabel label7;
+    private JLabel label8;
+    private JLabel label9;
+    private JLabel label10;
+    private JLabel label11;
+    private JLabel label12;
 
     public Level1(){
-        EverythingButPlayer = new JLayeredPane();
+        cardBack = new ImageIcon("Pictures/cardBack.png");
+        sun = new ImageIcon("Pictures/Sun.png");
+        moon = new ImageIcon("Pictures/Moon.png");
+        comets = new ImageIcon("Pictures/Comets.png");
+        asteroids = new ImageIcon("Pictures/Asteroids.png");
+        meteorite = new ImageIcon("Pictures/Meteorite.png");
+        telescope = new ImageIcon("Pictures/Telescope.png");
 
-        BufferedImage img = null;
-        try {
-            img = ImageIO.read(new File("Pictures/Sun.png"));
-        } catch (IOException e) {
-        }
-        Graphics g = img.getGraphics();
-        g.drawImage(img,0, 0, EverythingButPlayer);
+        CardMatch sunCard = new CardMatch(sun, cardBack);
 
-        this.add(EverythingButPlayer);
 
-        x1 = 0;
-        y1 = 0;
-//        j = new JFrame();
-//
-//        this.addKeyListener(new KeyTracker());
-//        j.add(new CustomPaintComponent());
-//
-//        String sunURL = "Pictures/Sun.png";
-//        sun = Toolkit.getDefaultToolkit().getImage(sunURL);
+        setContentPane(panel1);
+        label.setIcon(sunCard.getBack());
+        label.setText("");
+
+        label2.setIcon(moon);
+        label2.setText("");
+
 
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -49,44 +62,5 @@ public class Level1 extends JFrame{
         this.setVisible(true);
     }
 
-    public void actionPerformed(ActionEvent e) {
-        System.out.println("Action performed!");
-    }
 
-    public class KeyTracker extends KeyAdapter {
-        @Override
-        public void keyPressed(KeyEvent e) {
-            j.repaint();
-            int key = e.getKeyCode();
-            if (key == KeyEvent.VK_A) {
-                x1 = x1 - 10;
-                j.repaint();
-            }
-            if (key == KeyEvent.VK_S) {
-                y1 = y1 + 10;
-                j.repaint();
-            }
-            if (key == KeyEvent.VK_D) {
-                x1 = x1 + 10;
-                j.repaint();
-            }
-            if (key == KeyEvent.VK_W) {
-                y1 = y1 - 10;
-                j.repaint();
-            }
-        }
-
-    }
-
-
-    public class CustomPaintComponent extends Component {
-
-        public void paintSun(Graphics g) {
-            System.out.println("Paint " + x1 + " " + y1);
-            Graphics2D g2d = (Graphics2D)g;
-            System.out.println(sun);
-            g2d.drawImage(sun, x1, y1, null);
-        }
-
-    }
 }
