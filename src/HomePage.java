@@ -20,7 +20,9 @@ public class HomePage extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         playButton.setSize(100, 40);
+        playButton.setText("Play");
         instructionButton.setSize(100, 40);
+        instructionButton.setText("Game Rules");
 
 
         label1.setIcon(image); //show image of galaxy
