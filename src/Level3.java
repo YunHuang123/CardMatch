@@ -47,6 +47,7 @@ public class Level3 extends JFrame{
     private JLabel label28;
     private JLabel label29;
     private JLabel label30;
+    private JPanel panel;
 
     public Level3(){
         cardBack = new ImageIcon("Pictures/cardBack.png");
@@ -66,10 +67,119 @@ public class Level3 extends JFrame{
         meteorite = new ImageIcon("Pictures/Meteorite.png");
         telescope = new ImageIcon("Pictures/Telescope.png");
 
+        CardMatch sunCard = new CardMatch(sun, cardBack);
+        CardMatch moonCard = new CardMatch(moon, cardBack);
+        CardMatch mercuryCard = new CardMatch(mercury, cardBack);
+        CardMatch venusCard = new CardMatch(venus, cardBack);
+        CardMatch earthCard = new CardMatch(earth, cardBack);
+        CardMatch marsCard = new CardMatch(mars, cardBack);
+        CardMatch jupiterCard = new CardMatch(jupiter, cardBack);
+        CardMatch saturnCard = new CardMatch(saturn, cardBack);
+        CardMatch uranusCard = new CardMatch(uranus, cardBack);
+        CardMatch neptuneCard = new CardMatch(neptune, cardBack);
+        CardMatch plutoCard = new CardMatch(pluto, cardBack);
+        CardMatch cometCard = new CardMatch(comets, cardBack);
+        CardMatch asteroidCard = new CardMatch(asteroids, cardBack);
+        CardMatch meteoriteCard = new CardMatch(meteorite, cardBack);
+        CardMatch telescopeCard = new CardMatch(telescope, cardBack);
+
+        setContentPane(panel);
+
+        label1.setIcon(venusCard.getBack());
+        label1.setText("");
+
+        label2.setIcon(venusCard.getBack());
+        label2.setText("");
+
+        label3.setIcon(uranusCard.getBack());
+        label3.setText("");
+
+        label4.setIcon(mercuryCard.getBack());
+        label4.setText("");
+
+        label5.setIcon(earthCard.getBack());
+        label5.setText("");
+
+        label6.setIcon(sunCard.getBack());
+        label6.setText("");
+
+        label7.setIcon(neptuneCard.getBack());
+        label7.setText("");
+
+        label8.setIcon(jupiterCard.getBack());
+        label8.setText("");
+
+        label9.setIcon(cometCard.getBack());
+        label9.setText("");
+
+        label10.setIcon(neptuneCard.getBack());
+        label10.setText("");
+
+        label11.setIcon(asteroidCard.getBack());
+        label11.setText("");
+
+        label12.setIcon(moonCard.getBack());
+        label12.setText("");
+
+        label13.setIcon(plutoCard.getBack());
+        label13.setText("");
+
+        label14.setIcon(jupiterCard.getBack());
+        label14.setText("");
+
+        label15.setIcon(saturnCard.getBack());
+        label15.setText("");
+
+        label16.setIcon(plutoCard.getBack());
+        label16.setText("");
+
+        label17.setIcon(cometCard.getBack());
+        label17.setText("");
+
+        label18.setIcon(earthCard.getBack());
+        label18.setText("");
+
+        label19.setIcon(sunCard.getBack());
+        label19.setText("");
+
+        label20.setIcon(marsCard.getBack());
+        label20.setText("");
+
+        label21.setIcon(meteoriteCard.getBack());
+        label21.setText("");
+
+        label22.setIcon(saturnCard.getBack());
+        label22.setText("");
+
+        label23.setIcon(asteroidCard.getBack());
+        label23.setText("");
+
+        label24.setIcon(meteoriteCard.getBack());
+        label24.setText("");
+
+        label25.setIcon(moonCard.getBack());
+        label25.setText("");
+
+        label26.setIcon(telescopeCard.getBack());
+        label26.setText("");
+
+        label27.setIcon(telescopeCard.getBack());
+        label27.setText("");
+
+        label28.setIcon(mercuryCard.getBack());
+        label28.setText("");
+
+        label29.setIcon(uranusCard.getBack());
+        label29.setText("");
+
+        label30.setIcon(marsCard.getBack());
+        label30.setText("");
+
+
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(770, 950);
-        this.setResizable(true);
+        this.setSize(730, 910);
+        this.setResizable(false);
         this.setVisible(true);
     }
 }

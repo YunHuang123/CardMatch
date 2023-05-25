@@ -37,7 +37,7 @@ public class Level1 extends JFrame{
     private JLabel label12;
 
     public Level1(){
-        cardBack = new ImageIcon("Pictures/cardBack.png");
+        cardBack = new ImageIcon("Pictures/Cardback.png");
         sun = new ImageIcon("Pictures/Sun.png");
         moon = new ImageIcon("Pictures/Moon.png");
         comets = new ImageIcon("Pictures/Comets.png");
@@ -94,8 +94,8 @@ public class Level1 extends JFrame{
 
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(770, 950);
-        this.setResizable(true);
+        this.setSize(495, 570);
+        this.setResizable(false);
         this.setVisible(true);
     }
 
