@@ -17,10 +17,13 @@ public class HomePage extends JFrame implements ActionListener {
         setContentPane(panelBackGround);
         this.setSize(975, 690); //sets the x and y dimensions of the frame
         this.setTitle("A Test of Memory!"); //sets the title of the frame
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        playButton.addActionListener(this);
         playButton.setSize(100, 40);
         playButton.setText("Play");
+
+        instructionButton.addActionListener(this);
         instructionButton.setSize(100, 40);
         instructionButton.setText("Game Rules");
 
@@ -36,6 +39,12 @@ public class HomePage extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getSource() == instructionButton){
+            GameRule ruleWindow = new GameRule();
+        }
+        if (e.getSource() == playButton){
+            LevelSelect levels = new LevelSelect();
+            this.setVisible(false);
+        }
     }
 }
