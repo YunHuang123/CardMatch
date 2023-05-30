@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 public class Level1 extends JFrame implements ActionListener {
 
     private CardMatch sunCard;
@@ -97,6 +96,7 @@ public class Level1 extends JFrame implements ActionListener {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(620, 590);
+        this.setLocation(420, 0);
         this.setResizable(false);
         this.setVisible(true);
     }

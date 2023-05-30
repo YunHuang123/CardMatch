@@ -7,6 +7,7 @@ public class GameRule extends  JFrame{
     public GameRule(){
         ImageIcon rule = new ImageIcon("Pictures/Rule.png");
         label.setIcon(rule);
+        label.setText("");
 
         setContentPane(panel1);
 

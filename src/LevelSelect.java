@@ -25,21 +25,25 @@ public class LevelSelect extends JFrame implements ActionListener {
         setContentPane(panel1);
 
         this.setSize(975, 690);
+        this.setResizable(false);
         this.setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == button1){
-            Level1 one = new Level1();
+            Level1 level = new Level1();
+            Stopwatch stopwatch = new Stopwatch();
             this.setVisible(false);
         }
         if (e.getSource() == button2){
-            Level2 two = new Level2();
+            Level2 level = new Level2();
+            Stopwatch stopwatch = new Stopwatch();
             this.setVisible(false);
         }
         if (e.getSource() == button3){
-            Level3 three = new Level3();
+            Level3 level = new Level3();
+            Stopwatch stopwatch = new Stopwatch();
             this.setVisible(false);
         }
     }
