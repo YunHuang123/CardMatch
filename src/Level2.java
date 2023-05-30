@@ -1,132 +1,218 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Level2 extends JFrame{
-    private ImageIcon cardBack;
+public class Level2 extends JFrame implements ActionListener {
 
-    private ImageIcon sun;
-    private ImageIcon moon;
-    private ImageIcon mercury;
-    private ImageIcon venus;
-    private ImageIcon earth;
+    private CardMatch sunCard;
+    private CardMatch moonCard;
+    private CardMatch mercuryCard;
+    private CardMatch venusCard;
+    private CardMatch earthCard;
 
-    private ImageIcon mars;
-    private ImageIcon jupiter;
-    private ImageIcon saturn;
-    private ImageIcon uranus;
-    private ImageIcon neptune;
-    private JLabel label1;
-    private JLabel label2;
-    private JLabel label3;
-    private JLabel label4;
-    private JLabel label5;
-    private JLabel label6;
-    private JLabel label7;
-    private JLabel label8;
-    private JLabel label9;
-    private JLabel label10;
-    private JLabel label11;
-    private JLabel label12;
-    private JLabel label13;
-    private JLabel label14;
-    private JLabel label15;
-    private JLabel label16;
-    private JLabel label17;
-    private JLabel label18;
-    private JLabel label19;
-    private JLabel label20;
+    private CardMatch marsCard;
+    private CardMatch jupiterCard;
+    private CardMatch saturnCard;
+    private CardMatch uranusCard;
+    private CardMatch neptuneCard;
     private JPanel panel;
+    private JButton button1;
+    private JButton button2;
+    private JButton button3;
+    private JButton button4;
+    private JButton button5;
+    private JButton button6;
+    private JButton button7;
+    private JButton button8;
+    private JButton button9;
+    private JButton button10;
+    private JButton button11;
+    private JButton button12;
+    private JButton button13;
+    private JButton button14;
+    private JButton button15;
+    private JButton button16;
+    private JButton button17;
+    private JButton button18;
+    private JButton button19;
+    private JButton button20;
 
     public Level2(){
-        cardBack = new ImageIcon("Pictures/Cardback.png");
-        sun = new ImageIcon("Pictures/Sun.png");
-        moon = new ImageIcon("Pictures/Moon.png");
-        mercury = new ImageIcon("Pictures/Mercury.png");
-        venus = new ImageIcon("Pictures/Venus.png");
-        earth = new ImageIcon("Pictures/Earth.png");
-        mars = new ImageIcon("Pictures/Mars.png");
-        jupiter = new ImageIcon("Pictures/Jupiter.png");
-        saturn = new ImageIcon("Pictures/Saturn.png");
-        uranus = new ImageIcon("Pictures/Uranus.png");
-        neptune = new ImageIcon("Pictures/Neptune.png");
-        
-        CardMatch sunCard = new CardMatch(sun, cardBack);
-        CardMatch moonCard = new CardMatch(moon, cardBack);
-        CardMatch mercuryCard = new CardMatch(mercury, cardBack);
-        CardMatch venusCard = new CardMatch(venus, cardBack);
-        CardMatch earthCard = new CardMatch(earth, cardBack);
-        CardMatch marsCard = new CardMatch(mars, cardBack);
-        CardMatch jupiterCard = new CardMatch(jupiter, cardBack);
-        CardMatch saturnCard = new CardMatch(saturn, cardBack);
-        CardMatch uranusCard = new CardMatch(uranus, cardBack);
-        CardMatch neptuneCard = new CardMatch(neptune, cardBack);
+        ImageIcon cardBack = new ImageIcon("Pictures/Cardback.png");
+        ImageIcon sun = new ImageIcon("Pictures/Sun.png");
+        ImageIcon moon = new ImageIcon("Pictures/Moon.png");
+        ImageIcon mercury = new ImageIcon("Pictures/Mercury.png");
+        ImageIcon venus = new ImageIcon("Pictures/Venus.png");
+        ImageIcon earth = new ImageIcon("Pictures/Earth.png");
+        ImageIcon mars = new ImageIcon("Pictures/Mars.png");
+        ImageIcon jupiter = new ImageIcon("Pictures/Jupiter.png");
+        ImageIcon saturn = new ImageIcon("Pictures/Saturn.png");
+        ImageIcon uranus = new ImageIcon("Pictures/Uranus.png");
+        ImageIcon neptune = new ImageIcon("Pictures/Neptune.png");
+
+        sunCard = new CardMatch(sun, cardBack);
+        moonCard = new CardMatch(moon, cardBack);
+        mercuryCard = new CardMatch(mercury, cardBack);
+        venusCard = new CardMatch(venus, cardBack);
+        earthCard = new CardMatch(earth, cardBack);
+        marsCard = new CardMatch(mars, cardBack);
+        jupiterCard = new CardMatch(jupiter, cardBack);
+        saturnCard = new CardMatch(saturn, cardBack);
+        uranusCard = new CardMatch(uranus, cardBack);
+        neptuneCard = new CardMatch(neptune, cardBack);
+
+        button1.addActionListener(this);
+        button2.addActionListener(this);
+        button3.addActionListener(this);
+        button4.addActionListener(this);
+        button5.addActionListener(this);
+        button6.addActionListener(this);
+        button7.addActionListener(this);
+        button8.addActionListener(this);
+        button9.addActionListener(this);
+        button10.addActionListener(this);
+        button11.addActionListener(this);
+        button12.addActionListener(this);
+        button13.addActionListener(this);
+        button14.addActionListener(this);
+        button15.addActionListener(this);
+        button16.addActionListener(this);
+        button17.addActionListener(this);
+        button18.addActionListener(this);
+        button19.addActionListener(this);
+        button20.addActionListener(this);
 
         setContentPane(panel);
 
-        label1.setIcon(earthCard.getBack());
-        label1.setText("");
+        button1.setIcon(earthCard.getBack());
+        button1.setText("");
 
-        label2.setIcon(neptuneCard.getBack());
-        label2.setText("");
+        button2.setIcon(neptuneCard.getBack());
+        button2.setText("");
 
-        label3.setIcon(neptuneCard.getBack());
-        label3.setText("");
+        button3.setIcon(neptuneCard.getBack());
+        button3.setText("");
 
-        label4.setIcon(saturnCard.getBack());
-        label4.setText("");
+        button4.setIcon(saturnCard.getBack());
+        button4.setText("");
 
-        label5.setIcon(marsCard.getBack());
-        label5.setText("");
+        button5.setIcon(marsCard.getBack());
+        button5.setText("");
 
-        label6.setIcon(sunCard.getBack());
-        label6.setText("");
+        button6.setIcon(sunCard.getBack());
+        button6.setText("");
 
-        label7.setIcon(venusCard.getBack());
-        label7.setText("");
+        button7.setIcon(venusCard.getBack());
+        button7.setText("");
 
-        label8.setIcon(mercuryCard.getBack());
-        label8.setText("");
+        button8.setIcon(mercuryCard.getBack());
+        button8.setText("");
 
-        label9.setIcon(sunCard.getBack());
-        label9.setText("");
+        button9.setIcon(sunCard.getBack());
+        button9.setText("");
 
-        label10.setIcon(moonCard.getBack());
-        label10.setText("");
+        button10.setIcon(moonCard.getBack());
+        button10.setText("");
 
-        label11.setIcon(uranusCard.getBack());
-        label11.setText("");
+        button11.setIcon(uranusCard.getBack());
+        button11.setText("");
 
-        label12.setIcon(marsCard.getBack());
-        label12.setText("");
+        button12.setIcon(marsCard.getBack());
+        button12.setText("");
 
-        label13.setIcon(earthCard.getBack());
-        label13.setText("");
+        button13.setIcon(earthCard.getBack());
+        button13.setText("");
 
-        label14.setIcon(jupiterCard.getBack());
-        label14.setText("");
+        button14.setIcon(jupiterCard.getBack());
+        button14.setText("");
 
-        label15.setIcon(moonCard.getBack());
-        label15.setText("");
+        button15.setIcon(moonCard.getBack());
+        button15.setText("");
 
-        label16.setIcon(mercuryCard.getBack());
-        label16.setText("");
+        button16.setIcon(mercuryCard.getBack());
+        button16.setText("");
 
-        label17.setIcon(venusCard.getBack());
-        label17.setText("");
+        button17.setIcon(venusCard.getBack());
+        button17.setText("");
 
-        label18.setIcon(saturnCard.getBack());
-        label18.setText("");
+        button18.setIcon(saturnCard.getBack());
+        button18.setText("");
 
-        label19.setIcon(uranusCard.getBack());
-        label19.setText("");
+        button19.setIcon(uranusCard.getBack());
+        button19.setText("");
 
-        label20.setIcon(jupiterCard.getBack());
-        label20.setText("");
+        button20.setIcon(jupiterCard.getBack());
+        button20.setText("");
 
 
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(605, 735);
+        this.setSize(775, 775);
         this.setResizable(false);
         this.setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == button1){
+            button1.setIcon(earthCard.getFront());
+        }
+        if (e.getSource() == button2){
+            button2.setIcon(neptuneCard.getFront());
+        }
+        if (e.getSource() == button3){
+            button3.setIcon(neptuneCard.getFront());
+        }
+        if (e.getSource() == button4){
+            button4.setIcon(saturnCard.getFront());
+        }
+        if (e.getSource() == button5){
+            button5.setIcon(marsCard.getFront());
+        }
+        if (e.getSource() == button6){
+            button6.setIcon(sunCard.getFront());
+        }
+        if (e.getSource() == button7){
+            button7.setIcon(venusCard.getFront());
+        }
+        if (e.getSource() == button8){
+            button8.setIcon(mercuryCard.getFront());
+        }
+        if (e.getSource() == button9){
+            button9.setIcon(sunCard.getFront());
+        }
+        if (e.getSource() == button10){
+            button10.setIcon(moonCard.getFront());
+        }
+        if (e.getSource() == button11){
+            button11.setIcon(uranusCard.getFront());
+        }
+        if (e.getSource() == button12){
+            button12.setIcon(marsCard.getFront());
+        }
+        if (e.getSource() == button13){
+            button13.setIcon(earthCard.getFront());
+        }
+        if (e.getSource() == button14){
+            button14.setIcon(jupiterCard.getFront());
+        }
+        if (e.getSource() == button15){
+            button15.setIcon(moonCard.getFront());
+        }
+        if (e.getSource() == button16){
+            button16.setIcon(mercuryCard.getFront());
+        }
+        if (e.getSource() == button17){
+            button17.setIcon(venusCard.getFront());
+        }
+        if (e.getSource() == button18){
+            button18.setIcon(saturnCard.getFront());
+        }
+        if (e.getSource() == button19){
+            button19.setIcon(uranusCard.getFront());
+        }
+        if (e.getSource() == button20){
+            button20.setIcon(jupiterCard.getFront());
+        }
     }
 }

@@ -20,11 +20,11 @@ public class HomePage extends JFrame implements ActionListener {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         playButton.addActionListener(this);
-        playButton.setSize(100, 40);
+        //playButton.setSize(100, 40);
         playButton.setText("Play");
 
         instructionButton.addActionListener(this);
-        instructionButton.setSize(100, 40);
+        //instructionButton.setSize(100, 40);
         instructionButton.setText("Game Rules");
 
 
