@@ -5,8 +5,8 @@ import javax.swing.*;
 public class Stopwatch extends JFrame implements ActionListener{
     private JPanel panel1;
     private JLabel label1;
-    private JButton button1;
-    private JButton button2;
+    private JButton startButton;
+    private JButton resetButton;
     private int elapsedTime = 0;
     private int seconds = 0;
     private int minutes = 0;
@@ -36,35 +36,35 @@ public class Stopwatch extends JFrame implements ActionListener{
         label1.setHorizontalAlignment(JTextField.CENTER);
 
 
-        button1.setText("START");
-        button1.addActionListener(this);
-        button2.setText("RESET");
-        button2.addActionListener(this);
+        startButton.setText("START");
+        startButton.addActionListener(this);
+        resetButton.setText("RESET");
+        resetButton.addActionListener(this);
 
         setContentPane(panel1);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(420, 180);
+        this.setSize(435, 180);
         this.setResizable(false);
         this.setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == button1){
+        if (e.getSource() == startButton){
             if (started == false){
                 started = true;
-                button1.setText("STOP");
+                startButton.setText("STOP");
                 start();
             }
             else {
                 started = false;
-                button1.setText("START");
+                startButton.setText("START");
                 stop();
             }
         }
-        if (e.getSource() == button2){
+        if (e.getSource() == resetButton){
             started = false;
-            button1.setText("START");
+            startButton.setText("START");
             reset();
         }
     }

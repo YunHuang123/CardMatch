@@ -3,6 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Level2 extends JFrame implements ActionListener {
+    private ImageIcon cardBack;
 
     private CardMatch sunCard;
     private CardMatch moonCard;
@@ -36,9 +37,17 @@ public class Level2 extends JFrame implements ActionListener {
     private JButton button18;
     private JButton button19;
     private JButton button20;
+    private JButton resetButton;
+    private boolean flipped;
+    private JButton firstButton;
+    private JButton secondButton;
 
     public Level2(){
-        ImageIcon cardBack = new ImageIcon("Pictures/Cardback.png");
+        flipped = false;
+        firstButton = button1;
+        secondButton = button1;
+
+        cardBack = new ImageIcon("Pictures/Cardback.png");
         ImageIcon sun = new ImageIcon("Pictures/Sun.png");
         ImageIcon moon = new ImageIcon("Pictures/Moon.png");
         ImageIcon mercury = new ImageIcon("Pictures/Mercury.png");
@@ -81,6 +90,7 @@ public class Level2 extends JFrame implements ActionListener {
         button18.addActionListener(this);
         button19.addActionListener(this);
         button20.addActionListener(this);
+        resetButton.addActionListener(this);
 
         setContentPane(panel);
 
@@ -144,10 +154,13 @@ public class Level2 extends JFrame implements ActionListener {
         button20.setIcon(jupiterCard.getBack());
         button20.setText("");
 
+        resetButton.setText("Double click to unflip cards");
+        resetButton.setHorizontalTextPosition(SwingConstants.CENTER);
+        resetButton.setVerticalAlignment(SwingConstants.CENTER);
 
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(775, 775);
+        this.setSize(775, 815);
         this.setLocation(420, 0);
         this.setResizable(false);
         this.setVisible(true);
@@ -155,65 +168,599 @@ public class Level2 extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == button1){
-            button1.setIcon(earthCard.getFront());
+        if (flipped == false){
+            if (e.getSource() == button1){
+                button1.setIcon(earthCard.getFront());
+                firstButton = button1;
+            }
+            if (e.getSource() == button2){
+                button2.setIcon(neptuneCard.getFront());
+                firstButton = button2;
+            }
+            if (e.getSource() == button3){
+                button3.setIcon(neptuneCard.getFront());
+                firstButton = button3;
+            }
+            if (e.getSource() == button4){
+                button4.setIcon(saturnCard.getFront());
+                firstButton = button4;
+            }
+            if (e.getSource() == button5){
+                button5.setIcon(marsCard.getFront());
+                firstButton = button5;
+            }
+            if (e.getSource() == button6){
+                button6.setIcon(sunCard.getFront());
+                firstButton = button6;
+            }
+            if (e.getSource() == button7){
+                button7.setIcon(venusCard.getFront());
+                firstButton = button7;
+            }
+            if (e.getSource() == button8){
+                button8.setIcon(mercuryCard.getFront());
+                firstButton = button8;
+            }
+            if (e.getSource() == button9){
+                button9.setIcon(sunCard.getFront());
+                firstButton = button9;
+            }
+            if (e.getSource() == button10){
+                button10.setIcon(moonCard.getFront());
+                firstButton = button10;
+            }
+            if (e.getSource() == button11){
+                button11.setIcon(uranusCard.getFront());
+                firstButton = button11;
+            }
+            if (e.getSource() == button12){
+                button12.setIcon(marsCard.getFront());
+                firstButton = button12;
+            }
+            if (e.getSource() == button13){
+                button13.setIcon(earthCard.getFront());
+                firstButton = button13;
+            }
+            if (e.getSource() == button14){
+                button14.setIcon(jupiterCard.getFront());
+                firstButton = button14;
+            }
+            if (e.getSource() == button15){
+                button15.setIcon(moonCard.getFront());
+                firstButton = button15;
+            }
+            if (e.getSource() == button16){
+                button16.setIcon(mercuryCard.getFront());
+                firstButton = button16;
+            }
+            if (e.getSource() == button17){
+                button17.setIcon(venusCard.getFront());
+                firstButton = button17;
+            }
+            if (e.getSource() == button18){
+                button18.setIcon(saturnCard.getFront());
+                firstButton = button18;
+            }
+            if (e.getSource() == button19){
+                button19.setIcon(uranusCard.getFront());
+                firstButton = button19;
+            }
+            if (e.getSource() == button20){
+                button20.setIcon(jupiterCard.getFront());
+                firstButton = button20;
+            }
+            flipped = true;
         }
-        if (e.getSource() == button2){
-            button2.setIcon(neptuneCard.getFront());
-        }
-        if (e.getSource() == button3){
-            button3.setIcon(neptuneCard.getFront());
-        }
-        if (e.getSource() == button4){
-            button4.setIcon(saturnCard.getFront());
-        }
-        if (e.getSource() == button5){
-            button5.setIcon(marsCard.getFront());
-        }
-        if (e.getSource() == button6){
-            button6.setIcon(sunCard.getFront());
-        }
-        if (e.getSource() == button7){
-            button7.setIcon(venusCard.getFront());
-        }
-        if (e.getSource() == button8){
-            button8.setIcon(mercuryCard.getFront());
-        }
-        if (e.getSource() == button9){
-            button9.setIcon(sunCard.getFront());
-        }
-        if (e.getSource() == button10){
-            button10.setIcon(moonCard.getFront());
-        }
-        if (e.getSource() == button11){
-            button11.setIcon(uranusCard.getFront());
-        }
-        if (e.getSource() == button12){
-            button12.setIcon(marsCard.getFront());
-        }
-        if (e.getSource() == button13){
-            button13.setIcon(earthCard.getFront());
-        }
-        if (e.getSource() == button14){
-            button14.setIcon(jupiterCard.getFront());
-        }
-        if (e.getSource() == button15){
-            button15.setIcon(moonCard.getFront());
-        }
-        if (e.getSource() == button16){
-            button16.setIcon(mercuryCard.getFront());
-        }
-        if (e.getSource() == button17){
-            button17.setIcon(venusCard.getFront());
-        }
-        if (e.getSource() == button18){
-            button18.setIcon(saturnCard.getFront());
-        }
-        if (e.getSource() == button19){
-            button19.setIcon(uranusCard.getFront());
-        }
-        if (e.getSource() == button20){
-            button20.setIcon(jupiterCard.getFront());
+        else{
+            if (e.getSource() == button1){
+                button1.setIcon(earthCard.getFront());
+                secondButton = button1;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                button13.setEnabled(false);
+                button14.setEnabled(false);
+                button15.setEnabled(false);
+                button16.setEnabled(false);
+                button17.setEnabled(false);
+                button18.setEnabled(false);
+                button19.setEnabled(false);
+                button20.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (e.getSource() == button2){
+                button2.setIcon(neptuneCard.getFront());
+                secondButton = button2;
+                button1.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                button13.setEnabled(false);
+                button14.setEnabled(false);
+                button15.setEnabled(false);
+                button16.setEnabled(false);
+                button17.setEnabled(false);
+                button18.setEnabled(false);
+                button19.setEnabled(false);
+                button20.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (e.getSource() == button3){
+                button3.setIcon(neptuneCard.getFront());
+                secondButton = button3;
+                button2.setEnabled(false);
+                button1.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                button13.setEnabled(false);
+                button14.setEnabled(false);
+                button15.setEnabled(false);
+                button16.setEnabled(false);
+                button17.setEnabled(false);
+                button18.setEnabled(false);
+                button19.setEnabled(false);
+                button20.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (e.getSource() == button4){
+                button4.setIcon(saturnCard.getFront());
+                secondButton = button4;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button1.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                button13.setEnabled(false);
+                button14.setEnabled(false);
+                button15.setEnabled(false);
+                button16.setEnabled(false);
+                button17.setEnabled(false);
+                button18.setEnabled(false);
+                button19.setEnabled(false);
+                button20.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (e.getSource() == button5){
+                button5.setIcon(marsCard.getFront());
+                secondButton = button5;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button1.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                button13.setEnabled(false);
+                button14.setEnabled(false);
+                button15.setEnabled(false);
+                button16.setEnabled(false);
+                button17.setEnabled(false);
+                button18.setEnabled(false);
+                button19.setEnabled(false);
+                button20.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (e.getSource() == button6){
+                button6.setIcon(sunCard.getFront());
+                secondButton = button6;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button1.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                button13.setEnabled(false);
+                button14.setEnabled(false);
+                button15.setEnabled(false);
+                button16.setEnabled(false);
+                button17.setEnabled(false);
+                button18.setEnabled(false);
+                button19.setEnabled(false);
+                button20.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (e.getSource() == button7){
+                button7.setIcon(venusCard.getFront());
+                secondButton = button7;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button1.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                button13.setEnabled(false);
+                button14.setEnabled(false);
+                button15.setEnabled(false);
+                button16.setEnabled(false);
+                button17.setEnabled(false);
+                button18.setEnabled(false);
+                button19.setEnabled(false);
+                button20.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (e.getSource() == button8){
+                button8.setIcon(mercuryCard.getFront());
+                secondButton = button8;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button1.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                button13.setEnabled(false);
+                button14.setEnabled(false);
+                button15.setEnabled(false);
+                button16.setEnabled(false);
+                button17.setEnabled(false);
+                button18.setEnabled(false);
+                button19.setEnabled(false);
+                button20.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (e.getSource() == button9){
+                button9.setIcon(sunCard.getFront());
+                secondButton = button9;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button1.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                button13.setEnabled(false);
+                button14.setEnabled(false);
+                button15.setEnabled(false);
+                button16.setEnabled(false);
+                button17.setEnabled(false);
+                button18.setEnabled(false);
+                button19.setEnabled(false);
+                button20.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (e.getSource() == button10){
+                button10.setIcon(moonCard.getFront());
+                secondButton = button10;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button1.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                button13.setEnabled(false);
+                button14.setEnabled(false);
+                button15.setEnabled(false);
+                button16.setEnabled(false);
+                button17.setEnabled(false);
+                button18.setEnabled(false);
+                button19.setEnabled(false);
+                button20.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (e.getSource() == button11){
+                button11.setIcon(uranusCard.getFront());
+                secondButton = button11;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button1.setEnabled(false);
+                button12.setEnabled(false);
+                button13.setEnabled(false);
+                button14.setEnabled(false);
+                button15.setEnabled(false);
+                button16.setEnabled(false);
+                button17.setEnabled(false);
+                button18.setEnabled(false);
+                button19.setEnabled(false);
+                button20.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (e.getSource() == button12){
+                button12.setIcon(marsCard.getFront());
+                secondButton = button12;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button1.setEnabled(false);
+                button13.setEnabled(false);
+                button14.setEnabled(false);
+                button15.setEnabled(false);
+                button16.setEnabled(false);
+                button17.setEnabled(false);
+                button18.setEnabled(false);
+                button19.setEnabled(false);
+                button20.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (e.getSource() == button13){
+                button13.setIcon(earthCard.getFront());
+                secondButton = button13;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                button1.setEnabled(false);
+                button14.setEnabled(false);
+                button15.setEnabled(false);
+                button16.setEnabled(false);
+                button17.setEnabled(false);
+                button18.setEnabled(false);
+                button19.setEnabled(false);
+                button20.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (e.getSource() == button14){
+                button14.setIcon(jupiterCard.getFront());
+                secondButton = button14;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                button13.setEnabled(false);
+                button1.setEnabled(false);
+                button15.setEnabled(false);
+                button16.setEnabled(false);
+                button17.setEnabled(false);
+                button18.setEnabled(false);
+                button19.setEnabled(false);
+                button20.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (e.getSource() == button15){
+                button15.setIcon(moonCard.getFront());
+                secondButton = button15;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                button13.setEnabled(false);
+                button14.setEnabled(false);
+                button1.setEnabled(false);
+                button16.setEnabled(false);
+                button17.setEnabled(false);
+                button18.setEnabled(false);
+                button19.setEnabled(false);
+                button20.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (e.getSource() == button16){
+                button16.setIcon(mercuryCard.getFront());
+                secondButton = button16;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                button13.setEnabled(false);
+                button14.setEnabled(false);
+                button15.setEnabled(false);
+                button11.setEnabled(false);
+                button17.setEnabled(false);
+                button18.setEnabled(false);
+                button19.setEnabled(false);
+                button20.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (e.getSource() == button17){
+                button17.setIcon(venusCard.getFront());
+                secondButton = button17;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                button13.setEnabled(false);
+                button14.setEnabled(false);
+                button15.setEnabled(false);
+                button16.setEnabled(false);
+                button1.setEnabled(false);
+                button18.setEnabled(false);
+                button19.setEnabled(false);
+                button20.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (e.getSource() == button18){
+                button18.setIcon(saturnCard.getFront());
+                secondButton = button18;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                button13.setEnabled(false);
+                button14.setEnabled(false);
+                button15.setEnabled(false);
+                button16.setEnabled(false);
+                button17.setEnabled(false);
+                button1.setEnabled(false);
+                button19.setEnabled(false);
+                button20.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (e.getSource() == button19){
+                button19.setIcon(uranusCard.getFront());
+                secondButton = button19;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                button13.setEnabled(false);
+                button14.setEnabled(false);
+                button15.setEnabled(false);
+                button16.setEnabled(false);
+                button17.setEnabled(false);
+                button18.setEnabled(false);
+                button1.setEnabled(false);
+                button20.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (e.getSource() == button20){
+                button20.setIcon(jupiterCard.getFront());
+                secondButton = button20;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                button13.setEnabled(false);
+                button14.setEnabled(false);
+                button15.setEnabled(false);
+                button16.setEnabled(false);
+                button17.setEnabled(false);
+                button18.setEnabled(false);
+                button19.setEnabled(false);
+                button1.setEnabled(false);
+                firstButton.setEnabled(true);
+            }
+            if (firstButton.getIcon().toString().equals(secondButton.getIcon().toString())){
+                firstButton.setVisible(false);
+                secondButton.setVisible(false);
+            }
+            flipped = false;
+            if (e.getSource() == resetButton){
+                firstButton.setIcon(cardBack);
+                secondButton.setIcon(cardBack);
+                button1.setEnabled(true);
+                button2.setEnabled(true);
+                button3.setEnabled(true);
+                button4.setEnabled(true);
+                button5.setEnabled(true);
+                button6.setEnabled(true);
+                button7.setEnabled(true);
+                button8.setEnabled(true);
+                button9.setEnabled(true);
+                button10.setEnabled(true);
+                button11.setEnabled(true);
+                button12.setEnabled(true);
+                button13.setEnabled(true);
+                button14.setEnabled(true);
+                button15.setEnabled(true);
+                button16.setEnabled(true);
+                button17.setEnabled(true);
+                button18.setEnabled(true);
+                button19.setEnabled(true);
+                button20.setEnabled(true);
+            }
         }
     }
 }

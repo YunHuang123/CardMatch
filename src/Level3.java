@@ -3,6 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Level3 extends JFrame implements ActionListener {
+    private ImageIcon cardBack;
     private CardMatch sunCard;
     private CardMatch moonCard;
     private CardMatch mercuryCard;
@@ -49,9 +50,17 @@ public class Level3 extends JFrame implements ActionListener {
     private JButton button28;
     private JButton button29;
     private JButton button30;
+    private JButton resetButton;
+    private boolean flipped;
+    private JButton firstButton;
+    private JButton secondButton;
 
     public Level3(){
-        ImageIcon cardBack = new ImageIcon("Pictures/cardBack.png");
+        flipped = false;
+        firstButton = button1;
+        secondButton = button1;
+
+        cardBack = new ImageIcon("Pictures/cardBack.png");
         ImageIcon sun = new ImageIcon("Pictures/Sun.png");
         ImageIcon moon = new ImageIcon("Pictures/Moon.png");
         ImageIcon mercury = new ImageIcon("Pictures/Mercury.png");
@@ -114,6 +123,7 @@ public class Level3 extends JFrame implements ActionListener {
         button28.addActionListener(this);
         button29.addActionListener(this);
         button30.addActionListener(this);
+        resetButton.addActionListener(this);
 
         setContentPane(panel);
 
@@ -207,10 +217,14 @@ public class Level3 extends JFrame implements ActionListener {
         button30.setIcon(marsCard.getBack());
         button30.setText("");
 
+        resetButton.setText("Double click to unflip cards");
+        resetButton.setHorizontalTextPosition(SwingConstants.CENTER);
+        resetButton.setVerticalAlignment(SwingConstants.CENTER);
+
 
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(925, 960);
+        this.setSize(925, 990);
         this.setLocation(420, 0);
         this.setResizable(false);
         this.setVisible(true);
@@ -218,95 +232,229 @@ public class Level3 extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == button1){
-            button1.setIcon(venusCard.getFront());
+        if (flipped == false){
+            if (e.getSource() == button1){
+                button1.setIcon(venusCard.getFront());
+            }
+            if (e.getSource() == button2){
+                button2.setIcon(venusCard.getFront());
+            }
+            if (e.getSource() == button3){
+                button3.setIcon(uranusCard.getFront());
+            }
+            if (e.getSource() == button4){
+                button4.setIcon(mercuryCard.getFront());
+            }
+            if (e.getSource() == button5){
+                button5.setIcon(earthCard.getFront());
+            }
+            if (e.getSource() == button6){
+                button6.setIcon(sunCard.getFront());
+            }
+            if (e.getSource() == button7){
+                button7.setIcon(neptuneCard.getFront());
+            }
+            if (e.getSource() == button8){
+                button8.setIcon(jupiterCard.getFront());
+            }
+            if (e.getSource() == button9){
+                button9.setIcon(cometCard.getFront());
+            }
+            if (e.getSource() == button10){
+                button10.setIcon(neptuneCard.getFront());
+            }
+            if (e.getSource() == button11){
+                button11.setIcon(asteroidCard.getFront());
+            }
+            if (e.getSource() == button12){
+                button12.setIcon(moonCard.getFront());
+            }
+            if (e.getSource() == button13){
+                button13.setIcon(plutoCard.getFront());
+            }
+            if (e.getSource() == button14){
+                button14.setIcon(jupiterCard.getFront());
+            }
+            if (e.getSource() == button15){
+                button15.setIcon(saturnCard.getFront());
+            }
+            if (e.getSource() == button16){
+                button16.setIcon(plutoCard.getFront());
+            }
+            if (e.getSource() == button17){
+                button17.setIcon(cometCard.getFront());
+            }
+            if (e.getSource() == button18){
+                button18.setIcon(earthCard.getFront());
+            }
+            if (e.getSource() == button19){
+                button19.setIcon(sunCard.getFront());
+            }
+            if (e.getSource() == button20){
+                button20.setIcon(marsCard.getFront());
+            }
+            if (e.getSource() == button21){
+                button21.setIcon(meteoriteCard.getFront());
+            }
+            if (e.getSource() == button22){
+                button22.setIcon(saturnCard.getFront());
+            }
+            if (e.getSource() == button23){
+                button23.setIcon(asteroidCard.getFront());
+            }
+            if (e.getSource() == button24){
+                button24.setIcon(meteoriteCard.getFront());
+            }
+            if (e.getSource() == button25){
+                button25.setIcon(moonCard.getFront());
+            }
+            if (e.getSource() == button26){
+                button26.setIcon(telescopeCard.getFront());
+            }
+            if (e.getSource() == button27){
+                button27.setIcon(telescopeCard.getFront());
+            }
+            if (e.getSource() == button28){
+                button28.setIcon(mercuryCard.getFront());
+            }
+            if (e.getSource() == button29){
+                button29.setIcon(uranusCard.getFront());
+            }
+            if (e.getSource() == button30){
+                button30.setIcon(marsCard.getFront());
+            }
+            flipped = true;
         }
-        if (e.getSource() == button2){
-            button2.setIcon(venusCard.getFront());
-        }
-        if (e.getSource() == button3){
-            button3.setIcon(uranusCard.getFront());
-        }
-        if (e.getSource() == button4){
-            button4.setIcon(mercuryCard.getFront());
-        }
-        if (e.getSource() == button5){
-            button5.setIcon(earthCard.getFront());
-        }
-        if (e.getSource() == button6){
-            button6.setIcon(sunCard.getFront());
-        }
-        if (e.getSource() == button7){
-            button7.setIcon(neptuneCard.getFront());
-        }
-        if (e.getSource() == button8){
-            button8.setIcon(jupiterCard.getFront());
-        }
-        if (e.getSource() == button9){
-            button9.setIcon(cometCard.getFront());
-        }
-        if (e.getSource() == button10){
-            button10.setIcon(neptuneCard.getFront());
-        }
-        if (e.getSource() == button11){
-            button11.setIcon(asteroidCard.getFront());
-        }
-        if (e.getSource() == button12){
-            button12.setIcon(moonCard.getFront());
-        }
-        if (e.getSource() == button13){
-            button13.setIcon(plutoCard.getFront());
-        }
-        if (e.getSource() == button14){
-            button14.setIcon(jupiterCard.getFront());
-        }
-        if (e.getSource() == button15){
-            button15.setIcon(saturnCard.getFront());
-        }
-        if (e.getSource() == button16){
-            button16.setIcon(plutoCard.getFront());
-        }
-        if (e.getSource() == button17){
-            button17.setIcon(cometCard.getFront());
-        }
-        if (e.getSource() == button18){
-            button18.setIcon(earthCard.getFront());
-        }
-        if (e.getSource() == button19){
-            button19.setIcon(sunCard.getFront());
-        }
-        if (e.getSource() == button20){
-            button20.setIcon(marsCard.getFront());
-        }
-        if (e.getSource() == button21){
-            button21.setIcon(meteoriteCard.getFront());
-        }
-        if (e.getSource() == button22){
-            button22.setIcon(saturnCard.getFront());
-        }
-        if (e.getSource() == button23){
-            button23.setIcon(asteroidCard.getFront());
-        }
-        if (e.getSource() == button24){
-            button24.setIcon(meteoriteCard.getFront());
-        }
-        if (e.getSource() == button25){
-            button25.setIcon(moonCard.getFront());
-        }
-        if (e.getSource() == button26){
-            button26.setIcon(telescopeCard.getFront());
-        }
-        if (e.getSource() == button27){
-            button27.setIcon(telescopeCard.getFront());
-        }
-        if (e.getSource() == button28){
-            button28.setIcon(mercuryCard.getFront());
-        }
-        if (e.getSource() == button29){
-            button29.setIcon(uranusCard.getFront());
-        }
-        if (e.getSource() == button30){
-            button30.setIcon(marsCard.getFront());
+        else{
+            if (e.getSource() == button1){
+                button1.setIcon(venusCard.getFront());
+            }
+            if (e.getSource() == button2){
+                button2.setIcon(venusCard.getFront());
+            }
+            if (e.getSource() == button3){
+                button3.setIcon(uranusCard.getFront());
+            }
+            if (e.getSource() == button4){
+                button4.setIcon(mercuryCard.getFront());
+            }
+            if (e.getSource() == button5){
+                button5.setIcon(earthCard.getFront());
+            }
+            if (e.getSource() == button6){
+                button6.setIcon(sunCard.getFront());
+            }
+            if (e.getSource() == button7){
+                button7.setIcon(neptuneCard.getFront());
+            }
+            if (e.getSource() == button8){
+                button8.setIcon(jupiterCard.getFront());
+            }
+            if (e.getSource() == button9){
+                button9.setIcon(cometCard.getFront());
+            }
+            if (e.getSource() == button10){
+                button10.setIcon(neptuneCard.getFront());
+            }
+            if (e.getSource() == button11){
+                button11.setIcon(asteroidCard.getFront());
+            }
+            if (e.getSource() == button12){
+                button12.setIcon(moonCard.getFront());
+            }
+            if (e.getSource() == button13){
+                button13.setIcon(plutoCard.getFront());
+            }
+            if (e.getSource() == button14){
+                button14.setIcon(jupiterCard.getFront());
+            }
+            if (e.getSource() == button15){
+                button15.setIcon(saturnCard.getFront());
+            }
+            if (e.getSource() == button16){
+                button16.setIcon(plutoCard.getFront());
+            }
+            if (e.getSource() == button17){
+                button17.setIcon(cometCard.getFront());
+            }
+            if (e.getSource() == button18){
+                button18.setIcon(earthCard.getFront());
+            }
+            if (e.getSource() == button19){
+                button19.setIcon(sunCard.getFront());
+            }
+            if (e.getSource() == button20){
+                button20.setIcon(marsCard.getFront());
+            }
+            if (e.getSource() == button21){
+                button21.setIcon(meteoriteCard.getFront());
+            }
+            if (e.getSource() == button22){
+                button22.setIcon(saturnCard.getFront());
+            }
+            if (e.getSource() == button23){
+                button23.setIcon(asteroidCard.getFront());
+            }
+            if (e.getSource() == button24){
+                button24.setIcon(meteoriteCard.getFront());
+            }
+            if (e.getSource() == button25){
+                button25.setIcon(moonCard.getFront());
+            }
+            if (e.getSource() == button26){
+                button26.setIcon(telescopeCard.getFront());
+            }
+            if (e.getSource() == button27){
+                button27.setIcon(telescopeCard.getFront());
+            }
+            if (e.getSource() == button28){
+                button28.setIcon(mercuryCard.getFront());
+            }
+            if (e.getSource() == button29){
+                button29.setIcon(uranusCard.getFront());
+            }
+            if (e.getSource() == button30){
+                button30.setIcon(marsCard.getFront());
+            }
+            if (firstButton.getIcon().toString().equals(secondButton.getIcon().toString())){
+                firstButton.setVisible(false);
+                secondButton.setVisible(false);
+            }
+            flipped = false;
+            if (e.getSource() == resetButton){
+                firstButton.setIcon(cardBack);
+                secondButton.setIcon(cardBack);
+                button1.setEnabled(true);
+                button2.setEnabled(true);
+                button3.setEnabled(true);
+                button4.setEnabled(true);
+                button5.setEnabled(true);
+                button6.setEnabled(true);
+                button7.setEnabled(true);
+                button8.setEnabled(true);
+                button9.setEnabled(true);
+                button10.setEnabled(true);
+                button11.setEnabled(true);
+                button12.setEnabled(true);
+                button13.setEnabled(true);
+                button14.setEnabled(true);
+                button15.setEnabled(true);
+                button16.setEnabled(true);
+                button17.setEnabled(true);
+                button18.setEnabled(true);
+                button19.setEnabled(true);
+                button20.setEnabled(true);
+                button11.setEnabled(true);
+                button12.setEnabled(true);
+                button13.setEnabled(true);
+                button14.setEnabled(true);
+                button15.setEnabled(true);
+                button16.setEnabled(true);
+                button17.setEnabled(true);
+                button18.setEnabled(true);
+                button19.setEnabled(true);
+                button20.setEnabled(true);
+            }
         }
     }
 }

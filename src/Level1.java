@@ -24,11 +24,12 @@ public class Level1 extends JFrame implements ActionListener {
     private JButton button10;
     private JButton button11;
     private JButton button12;
-    private int flippedCards;
+    private JButton resetButton;
+    private boolean flipped;
     private JButton firstButton;
     private JButton secondButton;
     public Level1(){
-        flippedCards = 0;
+        flipped = false;
         firstButton = button1;
         secondButton = button1;
 
@@ -59,6 +60,7 @@ public class Level1 extends JFrame implements ActionListener {
         button10.addActionListener(this);
         button11.addActionListener(this);
         button12.addActionListener(this);
+        resetButton.addActionListener(this);
 
         setContentPane(panel1);
 
@@ -99,9 +101,13 @@ public class Level1 extends JFrame implements ActionListener {
         button12.setIcon(cometCard.getBack());
         button12.setText("");
 
+        resetButton.setText("Double click to unflip cards");
+        resetButton.setHorizontalTextPosition(SwingConstants.CENTER);
+        resetButton.setVerticalAlignment(SwingConstants.CENTER);
+
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(620, 590);
+        this.setSize(620, 620);
         this.setLocation(420, 0);
         this.setResizable(false);
         this.setVisible(true);
@@ -110,7 +116,7 @@ public class Level1 extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (flippedCards == 0){
+        if (flipped == false){
             if (e.getSource() == button1){
                 button1.setIcon(sunCard.getFront());
                 firstButton = button1;
@@ -125,78 +131,256 @@ public class Level1 extends JFrame implements ActionListener {
             }
             if (e.getSource() == button4){
                 button4.setIcon(meteoriteCard.getFront());
+                firstButton = button4;
             }
             if (e.getSource() == button5){
                 button5.setIcon(telescopeCard.getFront());
+                firstButton = button5;
             }
             if (e.getSource() == button6){
                 button6.setIcon(moonCard.getFront());
+                firstButton = button6;
             }
             if (e.getSource() == button7){
                 button7.setIcon(asteroidCard.getFront());
+                firstButton = button7;
             }
             if (e.getSource() == button8){
                 button8.setIcon(telescopeCard.getFront());
+                firstButton = button8;
             }
             if (e.getSource() == button9){
                 button9.setIcon(cometCard.getFront());
+                firstButton = button9;
             }
             if (e.getSource() == button10){
                 button10.setIcon(asteroidCard.getFront());
+                firstButton = button10;
             }
             if (e.getSource() == button11){
                 button11.setIcon(meteoriteCard.getFront());
+                firstButton = button11;
             }
             if (e.getSource() == button12){
                 button12.setIcon(cometCard.getFront());
+                firstButton = button12;
             }
-            flippedCards ++;
+            flipped = true;
         }
         else{
             if (e.getSource() == button1){
                 button1.setIcon(sunCard.getFront());
                 secondButton = button1;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                firstButton.setEnabled(true);
             }
             if (e.getSource() == button2){
                 button2.setIcon(moonCard.getFront());
                 secondButton = button2;
+                button1.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                firstButton.setEnabled(true);
             }
             if (e.getSource() == button3){
                 button3.setIcon(sunCard.getFront());
                 secondButton = button3;
+                button2.setEnabled(false);
+                button1.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                firstButton.setEnabled(true);
             }
             if (e.getSource() == button4){
                 button4.setIcon(meteoriteCard.getFront());
+                secondButton = button4;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button1.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                firstButton.setEnabled(true);
             }
             if (e.getSource() == button5){
                 button5.setIcon(telescopeCard.getFront());
+                secondButton = button5;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button1.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                firstButton.setEnabled(true);
             }
             if (e.getSource() == button6){
                 button6.setIcon(moonCard.getFront());
+                secondButton = button6;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button1.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                firstButton.setEnabled(true);
             }
             if (e.getSource() == button7){
                 button7.setIcon(asteroidCard.getFront());
+                secondButton = button7;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button1.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                firstButton.setEnabled(true);
             }
             if (e.getSource() == button8){
                 button8.setIcon(telescopeCard.getFront());
+                secondButton = button8;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button1.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                firstButton.setEnabled(true);
             }
             if (e.getSource() == button9){
                 button9.setIcon(cometCard.getFront());
+                secondButton = button9;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button1.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                firstButton.setEnabled(true);
             }
             if (e.getSource() == button10){
                 button10.setIcon(asteroidCard.getFront());
+                secondButton = button10;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button1.setEnabled(false);
+                button11.setEnabled(false);
+                button12.setEnabled(false);
+                firstButton.setEnabled(true);
             }
             if (e.getSource() == button11){
                 button11.setIcon(meteoriteCard.getFront());
+                secondButton = button11;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button1.setEnabled(false);
+                button12.setEnabled(false);
+                firstButton.setEnabled(true);
             }
             if (e.getSource() == button12){
                 button12.setIcon(cometCard.getFront());
+                secondButton = button12;
+                button2.setEnabled(false);
+                button3.setEnabled(false);
+                button4.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+                button7.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
+                button10.setEnabled(false);
+                button11.setEnabled(false);
+                button1.setEnabled(false);
+                firstButton.setEnabled(true);
             }
-            if (!firstButton.getIcon().toString().equals(secondButton.getIcon().toString())){
+            if (firstButton.getIcon().toString().equals(secondButton.getIcon().toString())){
+                firstButton.setVisible(false);
+                secondButton.setVisible(false);
+            }
+            flipped = false;
+            if (e.getSource() == resetButton){
                 firstButton.setIcon(cardBack);
                 secondButton.setIcon(cardBack);
+                button1.setEnabled(true);
+                button2.setEnabled(true);
+                button3.setEnabled(true);
+                button4.setEnabled(true);
+                button5.setEnabled(true);
+                button6.setEnabled(true);
+                button7.setEnabled(true);
+                button8.setEnabled(true);
+                button9.setEnabled(true);
+                button10.setEnabled(true);
+                button11.setEnabled(true);
+                button12.setEnabled(true);
             }
-            flippedCards = 0;
         }
     }
 
