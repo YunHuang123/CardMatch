@@ -154,7 +154,7 @@ public class Level2 extends JFrame implements ActionListener {
         button20.setIcon(jupiterCard.getBack());
         button20.setText("");
 
-        resetButton.setText("Double click to unflip cards");
+        resetButton.setText("Double click to continue");
         resetButton.setHorizontalTextPosition(SwingConstants.CENTER);
         resetButton.setVerticalAlignment(SwingConstants.CENTER);
 
@@ -732,34 +732,56 @@ public class Level2 extends JFrame implements ActionListener {
                 button1.setEnabled(false);
                 firstButton.setEnabled(true);
             }
-            if (firstButton.getIcon().toString().equals(secondButton.getIcon().toString())){
-                firstButton.setVisible(false);
-                secondButton.setVisible(false);
-            }
             flipped = false;
             if (e.getSource() == resetButton){
-                firstButton.setIcon(cardBack);
-                secondButton.setIcon(cardBack);
-                button1.setEnabled(true);
-                button2.setEnabled(true);
-                button3.setEnabled(true);
-                button4.setEnabled(true);
-                button5.setEnabled(true);
-                button6.setEnabled(true);
-                button7.setEnabled(true);
-                button8.setEnabled(true);
-                button9.setEnabled(true);
-                button10.setEnabled(true);
-                button11.setEnabled(true);
-                button12.setEnabled(true);
-                button13.setEnabled(true);
-                button14.setEnabled(true);
-                button15.setEnabled(true);
-                button16.setEnabled(true);
-                button17.setEnabled(true);
-                button18.setEnabled(true);
-                button19.setEnabled(true);
-                button20.setEnabled(true);
+                if (firstButton.getIcon().toString().equals(secondButton.getIcon().toString())){
+                    firstButton.setVisible(false);
+                    secondButton.setVisible(false);
+                    button1.setEnabled(true);
+                    button2.setEnabled(true);
+                    button3.setEnabled(true);
+                    button4.setEnabled(true);
+                    button5.setEnabled(true);
+                    button6.setEnabled(true);
+                    button7.setEnabled(true);
+                    button8.setEnabled(true);
+                    button9.setEnabled(true);
+                    button10.setEnabled(true);
+                    button11.setEnabled(true);
+                    button12.setEnabled(true);
+                    button13.setEnabled(true);
+                    button14.setEnabled(true);
+                    button15.setEnabled(true);
+                    button16.setEnabled(true);
+                    button17.setEnabled(true);
+                    button18.setEnabled(true);
+                    button19.setEnabled(true);
+                    button20.setEnabled(true);
+                }
+                else{
+                    firstButton.setIcon(cardBack);
+                    secondButton.setIcon(cardBack);
+                    button1.setEnabled(true);
+                    button2.setEnabled(true);
+                    button3.setEnabled(true);
+                    button4.setEnabled(true);
+                    button5.setEnabled(true);
+                    button6.setEnabled(true);
+                    button7.setEnabled(true);
+                    button8.setEnabled(true);
+                    button9.setEnabled(true);
+                    button10.setEnabled(true);
+                    button11.setEnabled(true);
+                    button12.setEnabled(true);
+                    button13.setEnabled(true);
+                    button14.setEnabled(true);
+                    button15.setEnabled(true);
+                    button16.setEnabled(true);
+                    button17.setEnabled(true);
+                    button18.setEnabled(true);
+                    button19.setEnabled(true);
+                    button20.setEnabled(true);
+                }
             }
         }
     }

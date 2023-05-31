@@ -101,7 +101,7 @@ public class Level1 extends JFrame implements ActionListener {
         button12.setIcon(cometCard.getBack());
         button12.setText("");
 
-        resetButton.setText("Double click to unflip cards");
+        resetButton.setText("Double click to continue");
         resetButton.setHorizontalTextPosition(SwingConstants.CENTER);
         resetButton.setVerticalAlignment(SwingConstants.CENTER);
 
@@ -360,26 +360,40 @@ public class Level1 extends JFrame implements ActionListener {
                 button1.setEnabled(false);
                 firstButton.setEnabled(true);
             }
-            if (firstButton.getIcon().toString().equals(secondButton.getIcon().toString())){
-                firstButton.setVisible(false);
-                secondButton.setVisible(false);
-            }
             flipped = false;
             if (e.getSource() == resetButton){
-                firstButton.setIcon(cardBack);
-                secondButton.setIcon(cardBack);
-                button1.setEnabled(true);
-                button2.setEnabled(true);
-                button3.setEnabled(true);
-                button4.setEnabled(true);
-                button5.setEnabled(true);
-                button6.setEnabled(true);
-                button7.setEnabled(true);
-                button8.setEnabled(true);
-                button9.setEnabled(true);
-                button10.setEnabled(true);
-                button11.setEnabled(true);
-                button12.setEnabled(true);
+                if (firstButton.getIcon().toString().equals(secondButton.getIcon().toString())){
+                    firstButton.setVisible(false);
+                    secondButton.setVisible(false);
+                    button1.setEnabled(true);
+                    button2.setEnabled(true);
+                    button3.setEnabled(true);
+                    button4.setEnabled(true);
+                    button5.setEnabled(true);
+                    button6.setEnabled(true);
+                    button7.setEnabled(true);
+                    button8.setEnabled(true);
+                    button9.setEnabled(true);
+                    button10.setEnabled(true);
+                    button11.setEnabled(true);
+                    button12.setEnabled(true);
+                }
+                else{
+                    firstButton.setIcon(cardBack);
+                    secondButton.setIcon(cardBack);
+                    button1.setEnabled(true);
+                    button2.setEnabled(true);
+                    button3.setEnabled(true);
+                    button4.setEnabled(true);
+                    button5.setEnabled(true);
+                    button6.setEnabled(true);
+                    button7.setEnabled(true);
+                    button8.setEnabled(true);
+                    button9.setEnabled(true);
+                    button10.setEnabled(true);
+                    button11.setEnabled(true);
+                    button12.setEnabled(true);
+                }
             }
         }
     }
