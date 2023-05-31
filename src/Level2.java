@@ -148,6 +148,7 @@ public class Level2 extends JFrame implements ActionListener {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(775, 775);
+        this.setLocation(420, 0);
         this.setResizable(false);
         this.setVisible(true);
     }

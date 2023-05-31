@@ -211,6 +211,7 @@ public class Level3 extends JFrame implements ActionListener {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(925, 960);
+        this.setLocation(420, 0);
         this.setResizable(false);
         this.setVisible(true);
     }

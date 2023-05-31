@@ -3,7 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Level1 extends JFrame implements ActionListener {
-
+    private ImageIcon cardBack;
     private CardMatch sunCard;
     private CardMatch moonCard;
     private CardMatch cometCard;
@@ -24,9 +24,15 @@ public class Level1 extends JFrame implements ActionListener {
     private JButton button10;
     private JButton button11;
     private JButton button12;
-
+    private int flippedCards;
+    private JButton firstButton;
+    private JButton secondButton;
     public Level1(){
-        ImageIcon cardBack = new ImageIcon("Pictures/Cardback.png");
+        flippedCards = 0;
+        firstButton = button1;
+        secondButton = button1;
+
+        cardBack = new ImageIcon("Pictures/Cardback.png");
         ImageIcon sun = new ImageIcon("Pictures/Sun.png");
         ImageIcon moon = new ImageIcon("Pictures/Moon.png");
         ImageIcon comets = new ImageIcon("Pictures/Comets.png");
@@ -104,41 +110,96 @@ public class Level1 extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == button1){
-            button1.setIcon(sunCard.getFront());
+        if (flippedCards == 0){
+            if (e.getSource() == button1){
+                button1.setIcon(sunCard.getFront());
+                firstButton = button1;
+            }
+            if (e.getSource() == button2){
+                button2.setIcon(moonCard.getFront());
+                firstButton = button2;
+            }
+            if (e.getSource() == button3){
+                button3.setIcon(sunCard.getFront());
+                firstButton = button3;
+            }
+            if (e.getSource() == button4){
+                button4.setIcon(meteoriteCard.getFront());
+            }
+            if (e.getSource() == button5){
+                button5.setIcon(telescopeCard.getFront());
+            }
+            if (e.getSource() == button6){
+                button6.setIcon(moonCard.getFront());
+            }
+            if (e.getSource() == button7){
+                button7.setIcon(asteroidCard.getFront());
+            }
+            if (e.getSource() == button8){
+                button8.setIcon(telescopeCard.getFront());
+            }
+            if (e.getSource() == button9){
+                button9.setIcon(cometCard.getFront());
+            }
+            if (e.getSource() == button10){
+                button10.setIcon(asteroidCard.getFront());
+            }
+            if (e.getSource() == button11){
+                button11.setIcon(meteoriteCard.getFront());
+            }
+            if (e.getSource() == button12){
+                button12.setIcon(cometCard.getFront());
+            }
+            flippedCards ++;
         }
-        if (e.getSource() == button2){
-            button2.setIcon(moonCard.getFront());
-        }
-        if (e.getSource() == button3){
-            button3.setIcon(sunCard.getFront());
-        }
-        if (e.getSource() == button4){
-            button4.setIcon(meteoriteCard.getFront());
-        }
-        if (e.getSource() == button5){
-            button5.setIcon(telescopeCard.getFront());
-        }
-        if (e.getSource() == button6){
-            button6.setIcon(moonCard.getFront());
-        }
-        if (e.getSource() == button7){
-            button7.setIcon(asteroidCard.getFront());
-        }
-        if (e.getSource() == button8){
-            button8.setIcon(telescopeCard.getFront());
-        }
-        if (e.getSource() == button9){
-            button9.setIcon(cometCard.getFront());
-        }
-        if (e.getSource() == button10){
-            button10.setIcon(asteroidCard.getFront());
-        }
-        if (e.getSource() == button11){
-            button11.setIcon(meteoriteCard.getFront());
-        }
-        if (e.getSource() == button12){
-            button12.setIcon(cometCard.getFront());
+        else{
+            if (e.getSource() == button1){
+                button1.setIcon(sunCard.getFront());
+                secondButton = button1;
+            }
+            if (e.getSource() == button2){
+                button2.setIcon(moonCard.getFront());
+                secondButton = button2;
+            }
+            if (e.getSource() == button3){
+                button3.setIcon(sunCard.getFront());
+                secondButton = button3;
+            }
+            if (e.getSource() == button4){
+                button4.setIcon(meteoriteCard.getFront());
+            }
+            if (e.getSource() == button5){
+                button5.setIcon(telescopeCard.getFront());
+            }
+            if (e.getSource() == button6){
+                button6.setIcon(moonCard.getFront());
+            }
+            if (e.getSource() == button7){
+                button7.setIcon(asteroidCard.getFront());
+            }
+            if (e.getSource() == button8){
+                button8.setIcon(telescopeCard.getFront());
+            }
+            if (e.getSource() == button9){
+                button9.setIcon(cometCard.getFront());
+            }
+            if (e.getSource() == button10){
+                button10.setIcon(asteroidCard.getFront());
+            }
+            if (e.getSource() == button11){
+                button11.setIcon(meteoriteCard.getFront());
+            }
+            if (e.getSource() == button12){
+                button12.setIcon(cometCard.getFront());
+            }
+            if (!firstButton.getIcon().toString().equals(secondButton.getIcon().toString())){
+                firstButton.setIcon(cardBack);
+                secondButton.setIcon(cardBack);
+            }
+            flippedCards = 0;
         }
     }
+
+
+
 }
