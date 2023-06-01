@@ -25,13 +25,20 @@ public class Level1 extends JFrame implements ActionListener {
     private JButton button11;
     private JButton button12;
     private JButton resetButton;
+    private JLabel label1;
     private boolean flipped;
     private JButton firstButton;
     private JButton secondButton;
+    private int numAttempts;
+    private int invisible;
+    private Record record = new Record();
+
     public Level1(){
         flipped = false;
         firstButton = button1;
         secondButton = button1;
+        numAttempts = 0;
+        invisible = 0;
 
         cardBack = new ImageIcon("Pictures/Cardback.png");
         ImageIcon sun = new ImageIcon("Pictures/Sun.png");
@@ -47,6 +54,8 @@ public class Level1 extends JFrame implements ActionListener {
         asteroidCard = new CardMatch(asteroids, cardBack);
         meteoriteCard = new CardMatch(meteorite, cardBack);
         telescopeCard = new CardMatch(telescope, cardBack);
+
+        label1.setText("Attempts: " + numAttempts);
 
         button1.addActionListener(this);
         button2.addActionListener(this);
@@ -107,7 +116,7 @@ public class Level1 extends JFrame implements ActionListener {
 
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(620, 620);
+        this.setSize(620, 630);
         this.setLocation(420, 0);
         this.setResizable(false);
         this.setVisible(true);
@@ -377,6 +386,7 @@ public class Level1 extends JFrame implements ActionListener {
                     button10.setEnabled(true);
                     button11.setEnabled(true);
                     button12.setEnabled(true);
+                    invisible ++;
                 }
                 else{
                     firstButton.setIcon(cardBack);
@@ -393,6 +403,14 @@ public class Level1 extends JFrame implements ActionListener {
                     button10.setEnabled(true);
                     button11.setEnabled(true);
                     button12.setEnabled(true);
+                }
+                numAttempts ++;
+                label1.setText("Attempts: " + numAttempts);
+                if (invisible == 6){
+                    if (numAttempts < record.getRecord1()){
+                        record.setRecord1(numAttempts);
+                        record.saveData();
+                    }
                 }
             }
         }

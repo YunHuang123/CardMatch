@@ -33,17 +33,14 @@ public class LevelSelect extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == button1){
             Level1 level = new Level1();
-            Stopwatch stopwatch = new Stopwatch();
             this.setVisible(false);
         }
         if (e.getSource() == button2){
             Level2 level = new Level2();
-            Stopwatch stopwatch = new Stopwatch();
             this.setVisible(false);
         }
         if (e.getSource() == button3){
             Level3 level = new Level3();
-            Stopwatch stopwatch = new Stopwatch();
             this.setVisible(false);
         }
     }

@@ -51,14 +51,20 @@ public class Level3 extends JFrame implements ActionListener {
     private JButton button29;
     private JButton button30;
     private JButton resetButton;
+    private JLabel label1;
     private boolean flipped;
     private JButton firstButton;
     private JButton secondButton;
+    private int numAttempts;
+    private int invisible;
+    private Record record = new Record();
 
     public Level3(){
         flipped = false;
         firstButton = button1;
         secondButton = button1;
+        numAttempts = 0;
+        invisible = 0;
 
         cardBack = new ImageIcon("Pictures/cardBack.png");
         ImageIcon sun = new ImageIcon("Pictures/Sun.png");
@@ -92,6 +98,8 @@ public class Level3 extends JFrame implements ActionListener {
         asteroidCard = new CardMatch(asteroids, cardBack);
         meteoriteCard = new CardMatch(meteorite, cardBack);
         telescopeCard = new CardMatch(telescope, cardBack);
+
+        label1.setText("Attempts: " + numAttempts);
 
         button1.addActionListener(this);
         button2.addActionListener(this);
@@ -1411,6 +1419,7 @@ public class Level3 extends JFrame implements ActionListener {
                     button28.setEnabled(true);
                     button29.setEnabled(true);
                     button30.setEnabled(true);
+                    invisible ++;
                 }
                 else{
                     firstButton.setIcon(cardBack);
@@ -1445,6 +1454,14 @@ public class Level3 extends JFrame implements ActionListener {
                     button28.setEnabled(true);
                     button29.setEnabled(true);
                     button30.setEnabled(true);
+                }
+                numAttempts ++;
+                label1.setText("Attempts: " + numAttempts);
+                if (invisible == 15){
+                    if (numAttempts < record.getRecord1()){
+                        record.setRecord3(numAttempts);
+                        record.saveData();
+                    }
                 }
             }
         }
