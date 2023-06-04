@@ -9,7 +9,6 @@ public class CardMatch {
         front = f;
         back = b;
     }
-
     public ImageIcon getFront() {
         return front;
     }
@@ -17,6 +16,7 @@ public class CardMatch {
     public ImageIcon getBack() {
         return back;
     }
+
 
 
 }

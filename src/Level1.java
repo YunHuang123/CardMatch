@@ -180,193 +180,73 @@ public class Level1 extends JFrame implements ActionListener {
             if (e.getSource() == button1){
                 button1.setIcon(sunCard.getFront());
                 secondButton = button1;
-                button2.setEnabled(false);
-                button3.setEnabled(false);
-                button4.setEnabled(false);
-                button5.setEnabled(false);
-                button6.setEnabled(false);
-                button7.setEnabled(false);
-                button8.setEnabled(false);
-                button9.setEnabled(false);
-                button10.setEnabled(false);
-                button11.setEnabled(false);
-                button12.setEnabled(false);
+                disableButton(button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12);
                 firstButton.setEnabled(true);
             }
             if (e.getSource() == button2){
                 button2.setIcon(moonCard.getFront());
                 secondButton = button2;
-                button1.setEnabled(false);
-                button3.setEnabled(false);
-                button4.setEnabled(false);
-                button5.setEnabled(false);
-                button6.setEnabled(false);
-                button7.setEnabled(false);
-                button8.setEnabled(false);
-                button9.setEnabled(false);
-                button10.setEnabled(false);
-                button11.setEnabled(false);
-                button12.setEnabled(false);
+                disableButton(button1, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12);
                 firstButton.setEnabled(true);
             }
             if (e.getSource() == button3){
                 button3.setIcon(sunCard.getFront());
                 secondButton = button3;
-                button2.setEnabled(false);
-                button1.setEnabled(false);
-                button4.setEnabled(false);
-                button5.setEnabled(false);
-                button6.setEnabled(false);
-                button7.setEnabled(false);
-                button8.setEnabled(false);
-                button9.setEnabled(false);
-                button10.setEnabled(false);
-                button11.setEnabled(false);
-                button12.setEnabled(false);
+                disableButton(button2, button1, button4, button5, button6, button7, button8, button9, button10, button11, button12);
                 firstButton.setEnabled(true);
             }
             if (e.getSource() == button4){
                 button4.setIcon(meteoriteCard.getFront());
                 secondButton = button4;
-                button2.setEnabled(false);
-                button3.setEnabled(false);
-                button1.setEnabled(false);
-                button5.setEnabled(false);
-                button6.setEnabled(false);
-                button7.setEnabled(false);
-                button8.setEnabled(false);
-                button9.setEnabled(false);
-                button10.setEnabled(false);
-                button11.setEnabled(false);
-                button12.setEnabled(false);
+                disableButton(button2, button3, button1, button5, button6, button7, button8, button9, button10, button11, button12);
                 firstButton.setEnabled(true);
             }
             if (e.getSource() == button5){
                 button5.setIcon(telescopeCard.getFront());
                 secondButton = button5;
-                button2.setEnabled(false);
-                button3.setEnabled(false);
-                button4.setEnabled(false);
-                button1.setEnabled(false);
-                button6.setEnabled(false);
-                button7.setEnabled(false);
-                button8.setEnabled(false);
-                button9.setEnabled(false);
-                button10.setEnabled(false);
-                button11.setEnabled(false);
-                button12.setEnabled(false);
+                disableButton(button2, button3, button4, button1, button6, button7, button8, button9, button10, button11, button12);
                 firstButton.setEnabled(true);
             }
             if (e.getSource() == button6){
                 button6.setIcon(moonCard.getFront());
                 secondButton = button6;
-                button2.setEnabled(false);
-                button3.setEnabled(false);
-                button4.setEnabled(false);
-                button5.setEnabled(false);
-                button1.setEnabled(false);
-                button7.setEnabled(false);
-                button8.setEnabled(false);
-                button9.setEnabled(false);
-                button10.setEnabled(false);
-                button11.setEnabled(false);
-                button12.setEnabled(false);
+                disableButton(button2, button3, button4, button5, button1, button7, button8, button9, button10, button11, button12);
                 firstButton.setEnabled(true);
             }
             if (e.getSource() == button7){
                 button7.setIcon(asteroidCard.getFront());
                 secondButton = button7;
-                button2.setEnabled(false);
-                button3.setEnabled(false);
-                button4.setEnabled(false);
-                button5.setEnabled(false);
-                button6.setEnabled(false);
-                button1.setEnabled(false);
-                button8.setEnabled(false);
-                button9.setEnabled(false);
-                button10.setEnabled(false);
-                button11.setEnabled(false);
-                button12.setEnabled(false);
+                disableButton(button2, button3, button4, button5, button6, button1, button8, button9, button10, button11, button12);
                 firstButton.setEnabled(true);
             }
             if (e.getSource() == button8){
                 button8.setIcon(telescopeCard.getFront());
                 secondButton = button8;
-                button2.setEnabled(false);
-                button3.setEnabled(false);
-                button4.setEnabled(false);
-                button5.setEnabled(false);
-                button6.setEnabled(false);
-                button7.setEnabled(false);
-                button1.setEnabled(false);
-                button9.setEnabled(false);
-                button10.setEnabled(false);
-                button11.setEnabled(false);
-                button12.setEnabled(false);
+                disableButton(button2, button3, button4, button5, button6, button7, button1, button9, button10, button11, button12);
                 firstButton.setEnabled(true);
             }
             if (e.getSource() == button9){
                 button9.setIcon(cometCard.getFront());
                 secondButton = button9;
-                button2.setEnabled(false);
-                button3.setEnabled(false);
-                button4.setEnabled(false);
-                button5.setEnabled(false);
-                button6.setEnabled(false);
-                button7.setEnabled(false);
-                button8.setEnabled(false);
-                button1.setEnabled(false);
-                button10.setEnabled(false);
-                button11.setEnabled(false);
-                button12.setEnabled(false);
+                disableButton(button2, button3, button4, button5, button6, button7, button8, button1, button10, button11, button12);
                 firstButton.setEnabled(true);
             }
             if (e.getSource() == button10){
                 button10.setIcon(asteroidCard.getFront());
                 secondButton = button10;
-                button2.setEnabled(false);
-                button3.setEnabled(false);
-                button4.setEnabled(false);
-                button5.setEnabled(false);
-                button6.setEnabled(false);
-                button7.setEnabled(false);
-                button8.setEnabled(false);
-                button9.setEnabled(false);
-                button1.setEnabled(false);
-                button11.setEnabled(false);
-                button12.setEnabled(false);
+                disableButton(button2, button3, button4, button5, button6, button7, button8, button9, button1, button11, button12);
                 firstButton.setEnabled(true);
             }
             if (e.getSource() == button11){
                 button11.setIcon(meteoriteCard.getFront());
                 secondButton = button11;
-                button2.setEnabled(false);
-                button3.setEnabled(false);
-                button4.setEnabled(false);
-                button5.setEnabled(false);
-                button6.setEnabled(false);
-                button7.setEnabled(false);
-                button8.setEnabled(false);
-                button9.setEnabled(false);
-                button10.setEnabled(false);
-                button1.setEnabled(false);
-                button12.setEnabled(false);
+                disableButton(button2, button3, button4, button5, button6, button7, button8, button9, button10, button1, button12);
                 firstButton.setEnabled(true);
             }
             if (e.getSource() == button12){
                 button12.setIcon(cometCard.getFront());
                 secondButton = button12;
-                button2.setEnabled(false);
-                button3.setEnabled(false);
-                button4.setEnabled(false);
-                button5.setEnabled(false);
-                button6.setEnabled(false);
-                button7.setEnabled(false);
-                button8.setEnabled(false);
-                button9.setEnabled(false);
-                button10.setEnabled(false);
-                button11.setEnabled(false);
-                button1.setEnabled(false);
+                disableButton(button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button1);
                 firstButton.setEnabled(true);
             }
             flipped = false;
@@ -416,6 +296,19 @@ public class Level1 extends JFrame implements ActionListener {
         }
     }
 
+    public void disableButton(JButton button1, JButton button2, JButton button3, JButton button4, JButton button5, JButton button6, JButton button7, JButton button8, JButton button9, JButton button10, JButton button11){
+        button1.setEnabled(false);
+        button2.setEnabled(false);
+        button3.setEnabled(false);
+        button4.setEnabled(false);
+        button5.setEnabled(false);
+        button6.setEnabled(false);
+        button7.setEnabled(false);
+        button8.setEnabled(false);
+        button9.setEnabled(false);
+        button10.setEnabled(false);
+        button11.setEnabled(false);
+    }
 
 
 }
