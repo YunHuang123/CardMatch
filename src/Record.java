@@ -7,8 +7,8 @@ public class Record {
 
     public Record(){
         records[0] = 100;
-        records[1] = 100;
-        records[2] = 100;
+        records[1] = 14;
+        records[2] = 21;
     }
 
     public int getRecord1(){
